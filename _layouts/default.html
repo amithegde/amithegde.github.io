@@ -6,10 +6,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{% if page.title %} {{ page.title }} - {% endif %} Mad about code</title>
-  <meta name="description" content="Ramblings of Ajeesh Mohan">
+  <title>{% if page.title %} {{ page.title }} - {% endif %} AmitHegde.com</title>
+  <meta name="description" content="thoughts from horizon">
   <meta name="viewport" content="width=device-width">
-  <meta property="og:site_name" content="Mad about code"/>
+  <meta property="og:site_name" content="AmitHegde.com"/>
   {% capture title %}{{ page.title | replace: '"':'&quot;' }}{% endcapture %}
   {% if page.title %}<meta property="og:title" content="{{ title }}"/>{% endif %}
   {% if page.layout == 'post' %}<meta property="og:type" content="article"/>
@@ -34,24 +34,24 @@
 </head>
 <body {% if page.templatename %} id="{{ page.templatename }}" {% endif %}>
   <header id="page-header" class="clearfix">
-    <h1 id="logo">mad about code</h1>
+    <h1 id="logo">AmitHegde.com</h1>
     <!-- <h3 id="subtext">mad<em>(adj)</em>: wildly confused or excited</h3>-->
-    <h3 id="subtext">Ramblings of Ajeesh Mohan</h3>
+    <h3 id="subtext">thoughts from horizon</h3>
     <nav>
       <ul id="primary-nav">
         <li><a href="/">blog</a></li>
-        <li><a href="https://github.com/madaboutcode">github</a></li>
-        <li><a href="https://twitter.com/ajeeshm">twitter</a></li>
+        <li><a href="https://github.com/amithegde">github</a></li>
+        <li><a href="https://twitter.com/amithegde">twitter</a></li>
       </ul>
     </nav>
   </header>
   {{ content }}
   <footer id="page-footer">
     <section id="share">
-      <a class="icon twitter" title="Follow me on twitter" href="https://twitter.com/ajeeshm">"</a>
+      <a class="icon twitter" title="Follow me on twitter" href="https://twitter.com/amithegde">"</a>
       <a class="icon feed" title="Subscribe to this blog" href="/atom.xml" target="_blank">$</a>
     </section>
-    <section id="copyright">&copy; Ajeesh 2013</section>
+    <section id="copyright">&copy; Amit Hegde 2014</section>
     <div id="server-info">Updated: {{ site.time }}</div>
   </footer>
 </body>
