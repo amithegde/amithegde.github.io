@@ -4,22 +4,22 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  <title>AmitHegde.com</title>
- <link href="http://www.amithegde.com/atom.xml" rel="self"/>
- <link href="http://www.amithegde.com/"/>
+ <link href="http://amithegde.com/atom.xml" rel="self"/>
+ <link href="http://amithegde.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://www.amithegde.com/</id>
  <author>
-   <name>AmitHegde.com - Personal blog of Amit Hegde</name>
+   <name>AmitHegde.com - toughts from horizon</name>
    <email>amits+hegde@gmail.com</email>
  </author>
  {% for post in site.posts %}
  {% unless post.forreview %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://www.amithegde.com{{ post.url }}"/>
+   <link href="http://amithegde.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://www.amithegde.com{{ post.id }}</id>
-   <content type="html">{{ post.content | replace:"='/","='http://www.amithegde.com/" | replace:'="/','="http://www.amithegde.com/' | xml_escape }}</content>
+   <content type="html">{{ post.content | replace:"='/","='http://amithegde.com/" | replace:'="/','="http://amithegde.com/' | xml_escape }}</content>
    <author>
     <name>Amit Hegde</name>
     <email>amits+hegde@gmail.com</email>
