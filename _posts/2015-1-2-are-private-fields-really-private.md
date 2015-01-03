@@ -16,7 +16,8 @@ void Main()
 	//create an instance and dump
 	var demo = new PrivateDemo().Dump();
 	
-	FieldInfo[] privateFieldInfos = typeof(PrivateDemo).GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
+	FieldInfo[] privateFieldInfos = typeof(PrivateDemo)
+				.GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
 	
 	//set new value and dump
 	foreach (var fieldInfo in privateFieldInfos)
