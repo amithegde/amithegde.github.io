@@ -8,7 +8,7 @@ filename: "2015-1-2-are-private-fields-really-private.md"
 
 As the saying goes, private fields and properties of a class are not available outside the class. But are they really private? Well, they are not; once they are in memory, anyone can tap in to them.
 
-Let's take a look at the code:
+Let's some code in c#:
 
 {% highlight csharp %}
 void Main()
