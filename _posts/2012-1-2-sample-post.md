@@ -6,7 +6,8 @@ forreview: false
 filename: "2015-1-2-are-private-fields-really-private.md"
 ---
 
-As the saying goes, private fields and properties of a class are not available outside the class. But are they really private? Well, they are not; once they are in memory, anyone can tap in to it.
+As the saying goes, private fields and properties of a class are not available outside the class. But are they really private? Well, they are not; once they are in memory, anyone can tap in to them.
+
 Let's take a look at the code:
 
 {% highlight csharp %}
@@ -42,6 +43,7 @@ public class PrivateDemo
 {% endhighlight %}
 
 And output from [LinQPad][1]:
+
 ![](https://raw.githubusercontent.com/amithegde/amithegde.github.io/master/contents/img/2015-1-2-accessing-private-fields-output.jpg)
 
 [1]:http://www.linqpad.net/
