@@ -6,9 +6,6 @@ forreview: false
 filename: "2015-2-25-writing-dynamictableentity-to-azure-storage-table.md"
 ---
 
-Writing DynamicTableEntity to Azure Storage Table
-============================
-
 There are ample of samples available to show how to insert an object/entity to Azure Storage Table. However, all the samples inherit from `TableEntity`
 
 This sample shows how to insert custom entities to table when we don't have a class that inherits from `TableEntity`.
