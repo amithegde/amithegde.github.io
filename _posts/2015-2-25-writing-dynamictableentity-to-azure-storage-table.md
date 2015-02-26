@@ -17,7 +17,7 @@ void Main()
 	var key = "";
 	var tableName = "";
 
-        var storageAccount = GetStorageAccount(account, key);
+    var storageAccount = GetStorageAccount(account, key);
 	var cloudTableClient = storageAccount.CreateCloudTableClient();
 	var table = cloudTableClient.GetTableReference(tableName);
 	
