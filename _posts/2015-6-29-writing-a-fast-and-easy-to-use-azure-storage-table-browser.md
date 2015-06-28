@@ -78,4 +78,4 @@ The idea behind this class is simple and is reusable. given a compile-able c# `L
 
 - collects the result
 
-Now on to [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser)..! Use it and let me know how you feel.
+Now on to [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser)..! Use it, Fork it and let me know how you feel.
