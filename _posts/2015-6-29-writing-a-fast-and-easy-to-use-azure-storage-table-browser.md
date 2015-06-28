@@ -57,7 +57,7 @@ public IDictionary<string,EntityProperty> Properties { get; set; }
 
 There are many other such properties such as `DoubleValue`, `Int32Value` etc. While pulling data through `DynamicTableEntity` we would not be knowing the types of each of the properties and this makes us go through a set of type comparisons before we can extract the value of the property.
 
-I wrote a method [ToDynamicList](https://github.com/amithegde/AzureTableBrowser/blob/master/src/AzureTableBrowser/AzureTableBrowser/Extensions/EnumerableExtensions.cs) which does all these comparisons, extracts the values for each properties along with default properties (such as `PartitionKey`) and coverts them to an [ExpandoObject](https://msdn.microsoft.com/en-us/library/system.dynamic.expandoobject%28v=vs.110%29.aspx). Now this becomes a flat structure instead of being a two level structure. `ToDynamicList` returns resulting list as a `List<dynamic>` which can be bound to grid on the UI. The result could be passed through a `Json` serializer in case of a web application.
+I wrote a method [ToDynamicList](https://github.com/amithegde/AzureTableBrowser/blob/master/src/AzureTableBrowser/AzureTableBrowser/Extensions/EnumerableExtensions.cs) which does all these comparisons, extracts values for all the properties along with default properties (such as `PartitionKey`) and  converts them to an [ExpandoObject](https://msdn.microsoft.com/en-us/library/system.dynamic.expandoobject%28v=vs.110%29.aspx). Now this becomes a flat structure instead of being a two level structure. `ToDynamicList` returns resulting list as a `List<dynamic>` which can be bound to grid on the UI. The result could be passed through a `Json` serializer in case of a web application.
 
 This method should have been made available on the `Storage Library` itself instead of making developers write this method, as `dynamic` type has been around for long time and libraries like [dapper-dot-net](https://github.com/StackExchange/dapper-dot-net) have shown it to be pretty powerful. May be they would consider it if many request come in.. :)
 
@@ -68,9 +68,13 @@ Supporting client-side LINQ queries
 
 The idea behind this class is simple and is reusable. given a compile-able c# `LINQ` expression
 - it will enclose it in a program
+
 - compiles an assembly
+
 - instantiates an object of the assembly
+
 - passes the collection to the assembly
+
 - collects the result
 
 Now on to [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser)..! Use it and let me know how you feel.
