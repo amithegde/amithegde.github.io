@@ -23,6 +23,13 @@ Converting table result received as [DynamicTableEntity](https://msdn.microsoft.
 
 If you look through the class, all the properties of the entity (other than the default properties like PartitionKey) are exposed as 
 
+{% highlight csharp %}
+
+public IDictionary<string,EntityProperty> Properties { get; set; }
+
+{% endhighlight %}
+
+
 `EntityProperty` class exposes the value as set of properties, for example here is the code for `BooleanValue` property.
 
 {% highlight csharp %}
