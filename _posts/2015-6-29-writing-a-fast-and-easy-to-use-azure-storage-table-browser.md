@@ -14,7 +14,7 @@ Half the world which uses `Azure Storage` uses `Azure Storage Explorer`, which d
 
 And one day I decided to write up my own tool out of the frustration of using this tool. For the readers who want to dive in to the code right away, here it is: [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser).  Executable Binaries [here](https://github.com/amithegde/AzureTableBrowser/raw/master/Binaries.zip). 
 
-This is the first part of a tool which does CRUD operations on `Azure Storage` and supports read only operations on table as of now. If the tool gets some traction, I plan to add more code.. :)
+This is the first part of a tool which does CRUD operations on `Azure Storage` and supports read only operations on table as of now. If the tool gets some traction, I plan to open source more code... :)
 
 In this post, I will explain about two important sections of this tool which make it useful and possible.
 
