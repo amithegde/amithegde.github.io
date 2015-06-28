@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Decoupling TableEntity while using Azure Storage with .Net"
+title: "Decoupling TableEntity while using Azure Storage"
 category: c#, Azure, Azure Storage, Patterns
 forreview: false
-filename: "2015-6-28-decoupling-tableentity-while-using-azure-storage-with-dot-net.md"
+filename: "2015-6-28-decoupling-tableentity-while-using-azure-storage.md"
 ---
 
 [Azure Storage](http://azure.microsoft.com/en-us/services/storage/) has a nice documentation [here](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/#create-a-table) and is easy to get started with.
