@@ -36,7 +36,7 @@ public class StorageTableEntityBase
 }
 {% endhighlight %}
 
-PartitionKey, RowKey, Timestamp and ETag are the default properties each entity on Azure Storage possess. `StorageTableEntityBase` class defined above lets us to contain these properties, copied over from the entity.
+PartitionKey, RowKey, Timestamp and ETag are the default properties each entity on Azure Storage possesses. `StorageTableEntityBase` class defined above lets us to contain these properties, copied over from the entity.
 
 Let us create an adapter class which implements `ITableEntity`:
 
@@ -136,4 +136,4 @@ public T RetrieveEntity<T>(string tableName, string partitionKey, string rowKey)
 }
 {% endhighlight %}
 
-I have not included boilerplate methods instantiate `TableClient`,  which is a trivial part and is available on the [documentation](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/#create-a-table).
+I have not included the boilerplate methods instantiate `TableClient`,  which is a trivial part and is available on the [documentation](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/#create-a-table).
