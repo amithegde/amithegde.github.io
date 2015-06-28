@@ -1,10 +1,10 @@
-	---
-	layout: post
-	title: "Writing a Fast and Easy to use Azure Storage Table Browser"
-	category: c#, Azure, Azure Storage, Tool
-	forreview: false
-	filename: "2015-6-29-writing-a-fast-and-easy-to-use-azure-storage-table-browser.md"
-	---
+---
+layout: post
+title: "Writing a Fast and Easy to use Azure Storage Table Browser"
+category: c#, Azure, Azure Storage, Tool
+forreview: false
+filename: "2015-6-29-writing-a-fast-and-easy-to-use-azure-storage-table-browser.md"
+---
 	
 There are many tools that let you query data from [Azure Storage Table](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/) including `Visual Studio`. But none of the tools are easy and fast as `SQL Server Management Studio` which most of us are comfortable with. 
 
