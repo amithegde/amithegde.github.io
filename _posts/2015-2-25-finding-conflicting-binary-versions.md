@@ -18,25 +18,33 @@ Let's write some code in C# to solve this:
 
 void Main()
 {
-	var folder = @"D:\MyProject\bin"; // look for binaries under this folder
-	var files = Directory.GetFiles(folder).Where(x => x.EndsWith(".dll")); // add more filters if needed
-	var searchForNamespace = ""; // namespace that you want to look for
+	var folder = @"";
+	var files = Directory.GetFiles(folder,"*.dll",SearchOption.AllDirectories);
+	
+	var searchForNamespace = "";//Eg: Newtonsoft.Json
 	
 	if(files.Any())
 	{
 		foreach (var element in files)
 		{
-			var assembly = Assembly.LoadFile(element);
-			if(assembly != null)
-			{
-				var references = assembly.GetReferencedAssemblies();
-				if(references.Any(x => x.FullName.StartsWith(searchForNamespace)))
+			try
+			{	        
+				var assembly = Assembly.LoadFile(element);
+				if(assembly != null)
 				{
-					var referencedAssembly = references.Where(x => x.FullName.StartsWith(searchForNamespace));
-					Console.WriteLine ("FileName: "+ element);
-					Console.WriteLine ("Referenced Assembly: ");
-					referencedAssembly.Dump();
+					var references = assembly.GetReferencedAssemblies();
+					if(references.Any(x => x.FullName.StartsWith(searchForNamespace)))
+					{
+						var referencedAssembly = references.Where(x => x.FullName.StartsWith(searchForNamespace));
+						Console.WriteLine ("FileName: "+ element);
+						Console.WriteLine ("Assembly: " + assembly.FullName + "\nReferenced Assembly: ");
+						referencedAssembly.Dump();
+					}
 				}
+			}
+			catch (Exception ex)
+			{
+				//element.Dump("exception loading");
 			}
 		}
 	}
