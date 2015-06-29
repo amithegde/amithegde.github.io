@@ -34,25 +34,26 @@ public IDictionary<string,EntityProperty> Properties { get; set; }
 
 {% highlight csharp %}
 
-		public bool? BooleanValue
+public bool? BooleanValue
+{
+	get
+	{
+		if (!this.IsNull)
 		{
-			get
-			{
-				if (!this.IsNull)
-				{
-					this.EnforceType(EdmType.Boolean);
-				}
-				return (bool?)this.PropertyAsObject;
-			}
-			set
-			{
-				if (value.HasValue)
-				{
-					this.EnforceType(EdmType.Boolean);
-				}
-				this.PropertyAsObject = value;
-			}
-			
+			this.EnforceType(EdmType.Boolean);
+		}
+		return (bool?)this.PropertyAsObject;
+	}
+	set
+	{
+		if (value.HasValue)
+		{
+			this.EnforceType(EdmType.Boolean);
+		}
+		this.PropertyAsObject = value;
+	}
+}
+	
 {% endhighlight %}
 
 There are many other such properties such as `DoubleValue`, `Int32Value` etc. While pulling data through `DynamicTableEntity` we would not be knowing the types of each of the properties and this makes us go through a set of type comparisons before we can extract the value of the property.
