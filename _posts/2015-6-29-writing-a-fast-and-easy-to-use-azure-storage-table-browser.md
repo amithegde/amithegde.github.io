@@ -36,22 +36,22 @@ public IDictionary<string,EntityProperty> Properties { get; set; }
 
 public bool? BooleanValue
 {
-	get
+get
+{
+	if (!this.IsNull)
 	{
-		if (!this.IsNull)
-		{
-			this.EnforceType(EdmType.Boolean);
-		}
-		return (bool?)this.PropertyAsObject;
+		this.EnforceType(EdmType.Boolean);
 	}
-	set
+	return (bool?)this.PropertyAsObject;
+}
+set
+{
+	if (value.HasValue)
 	{
-		if (value.HasValue)
-		{
-			this.EnforceType(EdmType.Boolean);
-		}
-		this.PropertyAsObject = value;
+		this.EnforceType(EdmType.Boolean);
 	}
+	this.PropertyAsObject = value;
+}
 }
 	
 {% endhighlight %}
@@ -65,7 +65,7 @@ This method should have been made available on the `Storage Library` itself inst
 Supporting client-side LINQ queries
 -----------------------------------
 
-`Azure Storage` supports [OData](http://www.odata.org/) query format which comes with a [limited set of query operators](http://msdn.microsoft.com/en-us/library/windowsazure/ff683669.aspx). Though this works well for filtering data over `HTTP`, we can't leverage on the advanced capabilities of [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) to filter and aggregate the data. So I wrote a wrapper around this to perform `LINQ ` operations on the data received from server. Here is the original project [TextToLINQ](https://github.com/amithegde/TextToLINQ) with some example usage. And the [code](https://github.com/amithegde/AzureTableBrowser/blob/master/src/AzureTableBrowser/AzureTableBrowser/Helpers/TextToLinq.cs) if you want to look at the core of it right away.
+`Azure Storage` supports [OData](http://www.odata.org/) query format which comes with a [limited set of query operators](http://msdn.microsoft.com/en-us/library/windowsazure/ff683669.aspx). Though this works well for filtering data over `HTTP`, we can't leverage on the advanced capabilities of [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) to filter and aggregate the data. So I wrote a wrapper around this to perform `LINQ ` operations on the data received from server. Here is the original project [TextToLINQ](https://github.com/amithegde/TextToLINQ) I created, with some example usage. And the [code](https://github.com/amithegde/AzureTableBrowser/blob/master/src/AzureTableBrowser/AzureTableBrowser/Helpers/TextToLinq.cs) if you want to look at the core of it right away.
 
 The idea behind this class is simple and is reusable. given a compile-able c# `LINQ` expression
 
@@ -77,6 +77,6 @@ The idea behind this class is simple and is reusable. given a compile-able c# `L
 
 - passes the collection to the assembly
 
-- collects the result
+- collects the result (result can be projection of the current collection enabling aggregation)
 
 Now on to [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser)..! Use it, Fork it and let me know how you feel.
