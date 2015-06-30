@@ -3,7 +3,7 @@ layout: post
 title: "Fixing Unmanaged DLL Not Found Exception On ASP.Net Application"
 category: c#, Azure, Asp.net, Debugging
 forreview: false
-filename: "2015-6-29-fixing-unmanaged-dll-not-found-exception-on-asp-net-app.md"
+filename: "2015-6-30-fixing-unmanaged-dll-not-found-exception-on-asp-net-app.md"
 ---
 	
 I often deal with `DLL` issues and I think it is good to document how I fix them as there would be many others facing similar issues. I assume that you have a fair knowledge of working of how an ASP.net application.. :)
