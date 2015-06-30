@@ -19,6 +19,7 @@ So, the binary is available but IIS is unable to locate it. What could be wrong?
 The tool I use in this kind of situation is [ProcMon from SysInternals](http://live.sysinternals.com/Procmon.exe). If ProcMon is new to you, go through [this quick intro video](https://www.youtube.com/watch?v=pjKNx41Ubxw) by [Scott Hanselman](https://twitter.com/shanselman).
 
 In continuation,
+
 - I copied over ProcMon to the VM on staging environment, which had only one VM running (if there are more VM's you are not sure which VM wold get the reqeust from client...!).
 - I set ProcMon to capture file operations of w3wp.exe process and tried to send some requests to the URL which fails. Another level of filter is to make ProcMon show only rows that contain path with the binary in question.
 - I could see that IIS is probing for the binary in may directories, which all started with IIS temp directory which looks something like `D:\Windows\Microsoft.NET\Framework64\v4.0.30319\Temporary ASP.NET Files\root\59a01799\5b6b1a2\assembly\dl3\a78168f6\7cabd0f6_d698d001\< binary name>`. Other directories it probes are system directories and the ones mentioned on the `PATH` environment variable.
