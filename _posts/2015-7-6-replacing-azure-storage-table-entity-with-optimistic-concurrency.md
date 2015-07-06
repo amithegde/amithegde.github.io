@@ -62,10 +62,17 @@ public void ReplaceEntityOptimistically<T>(string tableName, T entity, Action<T>
         }
     }
 }
+
+public void ReplaceEntity<T>(string tableName, T entity) where T : TableEntity, new()
+{
+    CloudTable table = TableClient.GetTableReference(tableName);
+    TableOperation tableOperation = TableOperation.Replace(entity);
+    table.Execute(tableOperation);
+}
 		
 {% endhighlight %}
 
-As you can see, method `ReplaceEntityOptimistically` iterates over `retryCount` and tries to update the entity. If fails, it pulls a latest copy of the entity from server, makes necessary changes on the entity using `entityUpdateAction` and tries to update the entity again.
+As you can see, method `ReplaceEntityOptimistically` iterates over `retryCount` and tries to update the entity. If fails, it pulls a latest copy of the entity from server, makes necessary changes on the entity using `entityUpdateAction` and tries to update the entity again. `RetrieveEntity` method is a trivial method to retrieve the entity again from server.
 
 Now, using this method is simple. All we need is an action to make changes to the entity properties. For example:
 
