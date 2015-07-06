@@ -28,7 +28,7 @@ Let us define the helper method to replace entity:
 /// <param name="entityUpdateAction"><see cref="Action"/> to update the entity properties</param>
 /// <param name="retryCount">Retry count to try replacing. Default is 3</param>
 public void ReplaceEntityOptimistically<T>(string tableName, T entity, Action<T> entityUpdateAction, int retryCount = 3)
-    where T : StorageTableEntityBase, new()
+    where T : TableEntitity, new()
 	{
     for (int retryIndex = 0; retryIndex < retryCount; retryIndex++)
     {
