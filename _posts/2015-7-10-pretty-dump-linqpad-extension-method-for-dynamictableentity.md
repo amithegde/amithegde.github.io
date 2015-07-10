@@ -10,7 +10,7 @@ Often, I write my [Azure Storage Table](https://azure.microsoft.com/en-us/docume
 
 I generally use [DynamicTableEntity](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.table.dynamictableentity.aspx) on `LINQPad` as it saves some time. But since `DynamicTableEntity` contains all the properties as `IDictionary<string,EntityProperty>` calling `Dump()` on it won't print an easy to read output.
 
-But wait, I discussed about [ToDynamicList](https://github.com/amithegde/AzureTableBrowser/blob/master/src/AzureTableBrowser/AzureTableBrowser/Extensions/EnumerableExtensions.cs) method I wrote for [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser) on [this post](http://www.amithegde.com/2015/06/writing-a-fast-and-easy-to-use-azure-storage-table-browser.html). So passing the `DynamicTableEntity` collection through this method before dumping will convert it to a flat list. Quick and easy..!
+But wait, I discussed about [ToDynamicList](https://github.com/amithegde/AzureTableBrowser/blob/master/src/AzureTableBrowser/AzureTableBrowser/Extensions/EnumerableExtensions.cs) method I wrote for [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser) on [this post](http://amithegde.github.io/2015/06/writing-a-fast-and-easy-to-use-azure-storage-table-browser.html). So passing the `DynamicTableEntity` collection through this method before dumping will convert it to a flat list. Quick and easy..!
 
 But calling `ToDynamicList()` every time before calling `Dump()` is tedious. can we just override the original `Dump()` method? Well, I did not find a strait-forward way to do it; though, I kind of got it working.
 
