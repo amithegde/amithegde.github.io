@@ -8,7 +8,7 @@ filename: "2015-7-30-linq-groupby-challenge.md"
 
 In this challenge let us explore [LINQ GroupBy](https://msdn.microsoft.com/en-us/library/vstudio/bb534304%28v=vs.100%29.aspx) based on multiple properties.
 
-The problem is to Group By Property1 if it matches certain condition or Property2 and collect a meaningful key for each key. As earlier, I use [LinqPad](http://www.linqpad.net/) to get the code working quickly.
+The problem is to Group By Property1 if it matches certain condition or Property2 and collect a meaningful key for each row. As earlier, I use [LinqPad](http://www.linqpad.net/) to get the code working quickly.
 
 {% highlight csharp %}
 void Main()
@@ -68,3 +68,12 @@ public static class Extensions
 {% endhighlight %}
 
 The crux of the problem lies in the method `GetKey` which returns a meaningful key for each row based on either `Parent1` or `Parent2`.
+
+Output from [LinQPad][1]:
+
+![](https://github.com/amithegde/amithegde.github.io/raw/master/contents/img/2015-7-30-linq-groupby-challenge-output.jpg)
+
+[1]:http://www.linqpad.net/
+
+
+
