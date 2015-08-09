@@ -6,7 +6,7 @@ forreview: false
 filename: "2015-6-30-fixing-unmanaged-dll-not-found-exception-on-asp-net-app.md"
 ---
 	
-I often deal with `DLL` issues and I think it is good to document how I fix them as there would be many others facing similar issues. I assume that you have a fair knowledge of working of how an ASP.net application.. :)
+I often deal with `DLL` issues and I think it is good to document how I fix them as there would be many others facing similar issues. I assume that you have a fair knowledge of working of ASP.net application.. :)
 
 I received a StackTrace today which said `System.DllNotFoundException: Unable to load DLL '< dll name >'`.  Here is how I tracked it down and fixed it:
 
