@@ -10,7 +10,7 @@ There are many tools that let you query data from [Azure Storage Table](https://
 
 Though data looks very similar to the data on `RDBMS` once it's on UI, none of the tools provide an intuitive user experience. Most of the tools I see around are either paid or if free, need lot of clicking around to get things done. 
 
-Half the world which uses `Azure Storage` uses `Azure Storage Explorer`, which doesn't even let you copy text (authors of Azure Storage Explorer, if you are reading this don't hesitate to fix it..!). Every developer I have come across is looking for a better tool, but most of them were asked to use this tool by a senior dev in the project and the leniage continued. Even I was handed over a copy of this tool and probably I used it for six months.
+Half the world which uses `Azure Storage` uses `Azure Storage Explorer`, which doesn't even let you copy text (authors of Azure Storage Explorer, if you are reading this don't hesitate to fix it..!). Every developer I have come across is looking for a better tool, but most of them were asked to use this tool by a senior dev in the project and the lineage continued. Even I was handed over a copy of this tool and probably I used it for six months.
 
 And one day I decided to write up my own tool out of the frustration of using this tool. For the readers who want to dive in to the code right away, here it is: [Azure Table Browser](https://github.com/amithegde/AzureTableBrowser).  Executable Binaries [here](https://github.com/amithegde/AzureTableBrowser/raw/master/Binaries.zip). 
 
