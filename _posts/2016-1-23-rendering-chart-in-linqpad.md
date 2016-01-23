@@ -6,7 +6,7 @@ forreview: false
 filename: "2016-1-23-rendering-chart-in-linqpad.md"
 ---
 
-Often charts tell us what numbers can't tell us. Here is a quick and easy way to render charts in LinqPad:
+Often charts tell us what numbers can't tell us. Here is a quick and easy way to render charts in [LinqPad](https://www.linqpad.net/):
 
 {% highlight csharp %}
 
